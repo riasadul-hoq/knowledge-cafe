@@ -2,8 +2,8 @@
   "name": "react-knowledge-cafe",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "homepage": "https://riasadul-hoq.github.io/knowledge-cafe",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
