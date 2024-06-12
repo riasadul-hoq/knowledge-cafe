@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
+import { FaRegBookmark } from "react-icons/fa6";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
   const {
-    id,
     cover,
     title,
     author_img,
@@ -13,8 +13,8 @@ const Blog = ({ blog }) => {
   } = blog;
   console.log(blog);
   return (
-    <div className="border-solid border-4 border-red-600 m-5 p-5">
-      <img className="mb-4" src={cover} alt={title}></img>
+    <div className="border-b-2 m-5 p-5">
+      <img className="mb-4 w-full" src={cover} alt={title}></img>
       <div className="flex justify-between">
         <div className="flex mb-4">
           <div>
@@ -24,8 +24,8 @@ const Blog = ({ blog }) => {
               alt={author}
             ></img>
           </div>
-          <div>
-            <p className="font-medium text-2xl text-custom-text-color ml-1 mb-1">
+          <div className="ml-5 mb-2">
+            <p className="font-medium text-2xl text-custom-text-color ">
               {author}
             </p>
             <span>{posted_date}</span>
@@ -33,6 +33,9 @@ const Blog = ({ blog }) => {
         </div>
         <div>
           <span>{reading_time} min read</span>
+          <button onClick={() => handleAddToBookmark(blog)} className="ml-2">
+            <FaRegBookmark />
+          </button>
         </div>
       </div>
 
@@ -45,15 +48,16 @@ const Blog = ({ blog }) => {
         ))}
       </div>
 
-      <button>
-        <a href="">Mark as read</a>
-      </button>
+      <a href="/" className="text-blue-600 underline decoration-solid">
+        Mark as read
+      </a>
     </div>
   );
 };
 
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handleAddToBookmark: PropTypes.func,
 };
 
 export default Blog;
