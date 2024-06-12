@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="flex container mx-auto">
+      <div className="md:flex lg:flex container mx-auto">
         <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>
         <Bookmarks bookmarks={bookmarks}></Bookmarks>
       </div>
