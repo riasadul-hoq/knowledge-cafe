@@ -14,9 +14,14 @@ function App() {
     // console.log(`${blog} added`);
   };
 
-  const handleMarkAsRead = (time) => {
+  const handleMarkAsRead = (time, id) => {
     setReadingTime(readingTime + time);
     // console.log(`${time} added`);
+    // Remove Bookmark once a blog has been read
+    const remainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setBookmarks(remainingBookmarks);
   };
 
   return (
